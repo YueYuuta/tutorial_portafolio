@@ -1,18 +1,20 @@
 <header class="header">
-    <nav class="nav container">
-        <a href="#" class="nav__logo">Junior</a>
+    <nav class="nav containerPersonal">
+        <a [routerLink]="['inicio']" class="nav__logo">Junior</a>
 
         <div class="nav__menu" [ngClass]="showMenu ? 'show-menu ':'hide-menu'">
             <ul class="nav__list grid">
                 <li class="nav__item" *ngFor="let item of itemsMenu">
-                    <a href="#" (click)="cambioEstadoNav()" class="nav__link"><i class="{{item.icono}} nav__icon"></i>
+                    <a (click)="cambioEstadoNav(item.ruta)" class="nav__link"><i class="{{item.icono}} nav__icon"></i>
                         {{item.nombre}}</a>
                 </li>
             </ul>
             <i class="fas fa-times nav__close" (click)="cambioEstadoNav()"></i>
         </div>
-        <div class="nav__btns" (click)="cambioEstadoNav()">
-            <div class="nav__toggle">
+        <div class="nav__btns">
+            <!-- cambio de tema -->
+            <i class="far fa-moon change-theme"></i>
+            <div class="nav__toggle" (click)="cambioEstadoNav()">
                 <i class="fas fa-bars"></i>
             </div>
         </div>

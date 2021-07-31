@@ -5,6 +5,7 @@ import { CualificadoComponent } from './cualificado/cualificado.component';
 import { HabilidadesComponent } from './habilidades/habilidades.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginasComponent } from './paginas.component';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,16 @@ const routes: Routes = [
       {
         path: 'cualificado',
         component: CualificadoComponent,
+      },
+
+      {
+        path: 'servicios',
+        component: ServiciosComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'inicio',
+        pathMatch: 'full',
       },
     ],
   },
